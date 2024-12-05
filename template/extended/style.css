@@ -1,0 +1,161 @@
+* {
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 410px;
+    width: 300px;
+    background-color: #282D38;
+    border-radius: 10px;
+}
+
+.header {
+    width: 300px;
+    height: 150px;
+    background-color: #313742;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+
+.avatar {
+    margin-top: 75px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow-clip-margin: content-box;
+}
+
+.avatar-placeholder {
+    position: absolute;
+    margin-top: 75px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow-clip-margin: content-box;
+    background-color: #ffffff;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+
+.avatar-placeholder-letter {
+    visibility: hidden;
+}
+
+.avatar-placeholder-letter::first-letter {
+    visibility: visible;
+    font-size: 40px;
+}
+
+.content {
+    width: 300px;
+    height: 260px;
+    /* background-color: red; */
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    align-items: end;
+}
+
+.user {
+    /* background-color: red; */
+    width: 300px;
+    height: 185px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    flex: 1;
+    position: relative;
+}
+              
+
+
+.role-moderator {
+    background-color: #11806A;
+    color: #11806A;
+}
+
+.role-admin {
+    background-color: #FF0000;
+    color: #FF0000;
+}
+
+.role-verified {
+    background-color: #2A79E0;
+    color: #2A79E0
+}
+
+.role-friend {
+    background-color: #00DD00;
+    color: #00DD00;
+}
+
+.role-vmoderator {
+    background-color: #17bb17;
+    color: #17bb17;
+}
+
+.role-bhteam {
+    background-color: #FFA500;
+    color: #FFA500;
+}
+
+.role {
+    border-radius: 10px;
+    padding: 0px 10px 0px 10px;
+    font-size: 14px;
+    margin-top: 5px;
+    color: white;
+}
+
+.name {
+    font-size: 20px;
+    background-color: transparent;
+}
+
+.stats {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0px;
+    width: 100%;
+    bottom: 40px;
+    margin-bottom: 0px;
+}
+
+.stat-label {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    /* background-color: red; */
+}
+
+.stat-value {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    /* background-color: blue; */
+    text-align: right;
+    margin-right: 40px;
+}
+
+.bh-logo {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    top: 20px
+}

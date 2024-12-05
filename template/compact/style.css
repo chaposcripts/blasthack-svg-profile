@@ -1,0 +1,110 @@
+* {
+    color: white;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 300px;
+    height: 230px;
+    background-color: #313742;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    width: 100%;
+    height: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    /* flex: 1; */
+    /* background-color: red; */
+}
+
+.footer {
+    width: 100%;
+    height: 156px;
+    background-color: #282D38;
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.labels {
+    left: 40px
+}
+
+.values {
+    text-align: end;
+    right: 40px;
+}
+
+.labels b {
+    font-weight: bolder;
+    color: #959FB4;
+}
+
+.bh-logo {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.role-moderator {
+    background-color: #11806A;
+    color: #11806A;
+}
+
+.role-admin {
+    background-color: #FF0000;
+    color: #FF0000;
+}
+
+.role-verified {
+    background-color: #2A79E0;
+    color: #2A79E0
+}
+
+.role-friend {
+    background-color: #00DD00;
+    color: #00DD00;
+}
+
+.role-vmoderator {
+    background-color: #17bb17;
+    color: #17bb17;
+}
+
+.role-bhteam {
+    background-color: #FFA500;
+    color: #FFA500;
+}
+
+.name {
+    text-align: center;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+.role {
+    color: white;
+    border-radius: 10px;
+    padding: 00px 10px 0px 10px;
+}

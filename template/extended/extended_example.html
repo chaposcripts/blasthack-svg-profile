@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- BEGIN -->
+    <div class="container">
+        <div class="header">
+            <img class="avatar" src="{{.AvatarURL}}"></img>
+            <div class="avatar-placeholder"><a class="avatar-placeholder-letter">{{ .Name }}</a></div>
+            <img class="bh-logo" src="https://www.blast.hk/styles/io_dark/images/blasthack/logo_b_new.png"/>               
+        </div>
+        <div class="content">
+            <div class="user">
+                <b class="name role-{{.GroupTag}}">{{ .Name }}</b>
+                <div class="role-{{.GroupTag}} role">
+                    <a>{{ .GroupTitle }}</a>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-label">
+                        <b>Сообщения</b>
+                        <b>Реакции</b>
+                        <b>Решения</b>
+                        <b>Темы</b>
+                    </div>
+                    <div class="stat-value">
+                       <a>{{ .Messages }}</a>
+                       <a>{{ .Reactions }}</a>
+                       <a>{{ .Solutions }}</a>
+                       <a>{{ .Topics }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <!-- END -->
+</body>
+</html>

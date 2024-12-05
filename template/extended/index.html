@@ -1,0 +1,206 @@
+<svg width="300" height="410" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="300" height="410">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+                * {
+                    text-decoration: none;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+                
+                .container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 410px;
+                    width: 300px;
+                    background-color: #282D38;
+                    border-radius: 10px;
+                }
+                
+                .header {
+                    width: 300px;
+                    height: 150px;
+                    background-color: #313742;
+                    border-radius: 10px 10px 0px 0px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-self: center;
+                }
+                
+                .avatar {
+                    margin-top: 75px;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    overflow-clip-margin: content-box;
+                    position: absolute;
+                }
+                
+                .avatar-placeholder {
+                    position: absolute;
+                    margin-top: 80px;
+                    width: 140px;
+                    height: 140px;
+                    border-radius: 50%;
+                    overflow-clip-margin: content-box;
+                    background-color: #ffffff;
+                    color: #ffffff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 100px;
+                }
+                
+                .avatar-placeholder-letter {
+                    visibility: hidden;
+                }
+                
+                .avatar-placeholder-letter::first-letter {
+                    visibility: visible;
+                    font-size: 40px;
+                }
+                
+                .content {
+                    width: 300px;
+                    height: 260px;
+                    /* background-color: red; */
+                    border-radius: 0px 0px 10px 10px;
+                    display: flex;
+                    align-items: end;
+                }
+                
+                .user {
+                    /* background-color: red; */
+                    width: 300px;
+                    height: 185px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    color: white;
+                    flex: 1;
+                    position: relative;
+                }
+                              
+                
+                
+                .role-moderator {
+                    background-color: #11806A;
+                    color: #11806A;
+                }
+                
+                .role-admin {
+                    background-color: #FF0000;
+                    color: #FF0000;
+                }
+                
+                .role-verified {
+                    background-color: #2A79E0;
+                    color: #2A79E0
+                }
+                
+                .role-friend {
+                    background-color: #00DD00;
+                    color: #00DD00;
+                }
+                
+                .role-vmoderator {
+                    background-color: #17bb17;
+                    color: #17bb17;
+                }
+                
+                .role-bhteam {
+                    background-color: #FFA500;
+                    color: #FFA500;
+                }
+                
+                .role {
+                    border-radius: 10px;
+                    padding: 0px 10px 0px 10px;
+                    font-size: 14px;
+                    margin-top: 5px;
+                    color: white;
+                }
+                
+                .name {
+                    font-size: 20px;
+                    background-color: transparent;
+                }
+                
+                .stats {
+                    position: absolute;
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 0px;
+                    width: 100%;
+                    bottom: 40px;
+                    margin-bottom: 0px;
+                }
+                
+                .stat-label {
+                    margin-left: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+                    height: 100%;
+                    /* background-color: red; */
+                }
+                
+                .stat-value {
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+                    height: 100%;
+                    /* background-color: blue; */
+                    text-align: right;
+                    margin-right: 40px;
+                }
+                
+                .bh-logo {
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    left: 20px;
+                    top: 20px
+                }
+            </style>
+            <a href="https://blast.hk/members/{{.ID}}">
+                <div class="container">
+                    <div class="header">
+                        <div class="avatar-placeholder"></div>
+                        <img class="avatar" src="{{.AvatarBase64}}"></img>
+                        <svg class="bh-logo" width="64" height="64" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M246.25 464.331C236.505 474.367 226.692 484.342 216.812 494.257C216.541 494.531 216.395 494.475 216.375 494.086L212.197 419.774C212.185 419.578 212.118 419.389 212.003 419.228C211.888 419.066 211.73 418.939 211.546 418.86C198.318 413.321 186.822 405.526 177.057 395.478C176.013 394.4 175.051 393.792 174.17 393.651C172.916 393.457 171.706 393.775 170.541 394.604C158.783 402.9 146.9 411.314 134.892 419.844C134.621 420.038 134.486 419.968 134.486 419.633V350.237C134.486 341.701 131.077 335.114 124.26 330.478C119.611 327.32 114.315 326.089 108.372 326.784C108.184 326.803 108.004 326.793 107.844 326.755C107.684 326.717 107.549 326.652 107.447 326.564C106.918 326.115 107.142 325.664 108.118 325.209C110.225 324.232 115.477 321.221 123.873 316.177C128.319 313.507 131.385 309.798 133.073 305.048C134.421 301.241 134.729 296.698 133.998 291.419C132.615 281.457 128.285 273.101 121.007 266.351C118.33 263.862 113.966 261.008 107.914 257.79C72.4654 238.924 36.9354 220.204 1.32398 201.632C0.958043 201.438 0.673422 201.257 0.470122 201.09C-0.302418 200.447 -0.122836 200.093 1.00887 200.026C1.30026 200.013 1.62893 200.046 1.99487 200.126C31.8461 206.803 61.7177 213.397 91.6095 219.906C100.345 221.813 105.529 222.79 107.162 222.837C110.903 222.957 114.542 222.358 118.079 221.04C121.583 219.736 124.585 217.772 127.085 215.149C131.965 210.038 134.411 203.532 134.425 195.63C134.499 141.626 134.519 87.6215 134.486 33.6171C134.479 27.0003 136.6 20.7984 140.849 15.0112C148.025 5.23665 157.696 0 169.472 0C181.248 0 190.83 5.23665 198.007 15.0112C202.256 20.7984 204.377 27.0003 204.37 33.6171C204.268 75.6859 204.624 128.543 204.624 170.612C204.624 170.652 204.6 171.15 204.553 172.107C204.438 174.261 205.288 175.87 207.104 176.934C208.968 178.031 210.709 177.928 212.329 176.623C212.986 176.095 213.329 175.82 213.356 175.8C229.091 164.467 246.256 157.883 264.852 156.05C291.823 153.388 317.588 158.482 342.146 171.334C369.727 185.759 388.753 207.027 399.223 235.14C404.692 249.839 407.433 266.043 407.446 283.752C407.487 346.809 426.922 402.847 465.753 451.867C468.89 455.834 470.479 457.842 470.52 457.888C483.863 474.955 497.261 491.979 510.713 508.959C511.322 509.722 511.702 510.351 511.851 510.846C512.231 512.063 511.885 512.318 510.814 511.608C462.212 479.2 413.627 446.879 365.058 414.645C360.83 411.842 357.468 410.196 354.975 409.708C350.163 408.758 345.64 409.778 341.404 412.769C338.572 414.776 336.301 417.449 334.594 420.787C333.726 422.486 333.238 424.591 333.13 427.099C332.669 437.449 332.263 447.559 331.91 457.427C331.876 458.43 331.534 458.547 330.884 457.778C326.201 452.238 321.559 446.809 316.957 441.49C312.437 436.272 308.812 432.9 306.081 431.375C301.019 428.558 295.238 427.521 288.739 428.264C284.287 428.772 280.452 430.23 277.233 432.639C276.724 433.014 273.926 435.824 268.836 441.069L246.25 464.331ZM335.406 236.275C349.966 250.65 358.146 270.147 358.146 290.476C358.146 310.805 349.966 330.302 335.406 344.677C320.845 359.051 301.097 367.127 280.506 367.127C259.914 367.127 240.166 359.051 225.606 344.677C211.045 330.302 202.865 310.805 202.865 290.476C202.865 270.147 211.045 250.65 225.606 236.275C240.166 221.9 259.914 213.825 280.506 213.825C301.097 213.825 320.845 221.9 335.406 236.275Z" fill="#DADADA"/>
+                            <path d="M280.5 345.5C310.876 345.5 335.5 320.876 335.5 290.5C335.5 260.124 310.876 235.5 280.5 235.5C250.124 235.5 225.5 260.124 225.5 290.5C225.5 320.876 250.124 345.5 280.5 345.5Z" fill="#698CC8"/>
+                        </svg>
+                            
+                    </div>
+                    <div class="content">
+                        <div class="user">
+                            <b class="name role-{{.GroupTag}}">{{ .Name }}</b>
+                            <div class="role-{{.GroupTag}} role">
+                                <a>{{ .GroupTitle }}</a>
+                            </div>
+                            
+                            <div class="stats">
+                                <div class="stat-label">
+                                    <b>Сообщения</b>
+                                    <b>Реакции</b>
+                                    <b>Решения</b>
+                                    <b>Темы</b>
+                                </div>
+                                <div class="stat-value">
+                                   <a>{{ .Messages }}</a>
+                                   <a>{{ .Reactions }}</a>
+                                   <a>{{ .Solutions }}</a>
+                                   <a>{{ .Topics }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </foreignObject>
+</svg>
