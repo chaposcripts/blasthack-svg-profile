@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
+	"time"
 
 	"github.com/PuerkitoBio/goquery"
 )
@@ -21,8 +22,10 @@ type Profile struct {
 	GroupTag     string
 	AvatarURL    string
 	AvatarBase64 string
+	UpdatedAt    time.Time
 }
 
+var cache map[string]Profile = map[string]Profile{}
 var GroupTags map[string]string = map[string]string{
 	"Проверенный": "verified",
 	"Друг":        "friend",
@@ -31,7 +34,6 @@ var GroupTags map[string]string = map[string]string{
 	"Администратор":         "admin",
 	"BH Team":               "bhteam",
 }
-
 var multiLanguageKeys map[string]string = map[string]string{
 	"Сообщения": "messages",
 	"Решения":   "solutions",
@@ -40,12 +42,17 @@ var multiLanguageKeys map[string]string = map[string]string{
 }
 
 func GetProfileInfo(profileId string) (Profile, error) {
+	userFromCache, isExists := cache[profileId]
+	if isExists && time.Duration(time.Now().Sub(userFromCache.UpdatedAt).Minutes()) < (time.Minute*5) {
+		return userFromCache, nil
+	}
 	var user Profile = Profile{
 		ID:        profileId,
 		Messages:  "0",
 		Solutions: "0",
 		Topics:    "0",
 		Reactions: "0",
+		UpdatedAt: time.Now(),
 	}
 
 	response, err := http.Get(fmt.Sprintf("https://www.blast.hk/members/%s/", profileId))
@@ -86,7 +93,7 @@ func GetProfileInfo(profileId string) (Profile, error) {
 				}
 			}
 		}
-		fmt.Println("a", s.AttrOr("href", "nil"))
+		// fmt.Println("a", s.AttrOr("href", "nil"))
 	})
 
 	document.Find(".pairs.pairs--rows.pairs--rows--centered").Each(func(i int, s *goquery.Selection) {
@@ -102,10 +109,10 @@ func GetProfileInfo(profileId string) (Profile, error) {
 			} else if key == "reactions" {
 				user.Reactions = parts[1]
 			}
-		} else {
-			fmt.Println("key", parts[0], "not found")
 		}
 	})
+	cache[profileId] = user
+	fmt.Println("User added to cache")
 	return user, nil
 }
 
